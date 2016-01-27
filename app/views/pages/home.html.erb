@@ -7,14 +7,14 @@
         <div class="well">
             <h2 class="text-center">Basic Membership</h2>
             <h4 class="text-center">Rgister for free and get basic access to the <strong>Tenantr</strong> application.</h4> <br />
-            <%= link_to "Register FREE Account", new_user_registration_path, class: 'btn btn-primary btn-lg btn-block' %>
+            <%= link_to "Register FREE Account", new_user_registration_path(plan: @basic_plan.id), class: 'btn btn-primary btn-lg btn-block' %>
         </div>  
     </div>
     <div class="col-md-6">
         <div class="well">
             <h2 class="text-center">Pro Membership</h2>
             <h4 class="text-center">Register for the Pro Account for $10/month to gain full access to the <strong>Tenantr</strong> application.</h4>
-            <%= link_to "Register PRO Account", new_user_registration_path, class: 'btn btn-success btn-lg btn-block' %>
+            <%= link_to "Register PRO Account", new_user_registration_path(plan: @pro_plan.id), class: 'btn btn-success btn-lg btn-block' %>
         </div>  
     </div>
 </div>
