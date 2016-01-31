@@ -14,6 +14,7 @@ class ProfilesController < ApplicationController
            redirect_to user_path( params[:user_id] ) 
         else
             flash[:danger] = "Error saving profile."
+            render action: :new
         end
     end
     
