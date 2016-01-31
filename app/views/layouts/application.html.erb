@@ -37,7 +37,6 @@
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "About", about_path %></li>
         <li><%= link_to "Contact Us", new_contact_path %></li>
-        <%= link_to "Profile", new_user_profile_path(current_user) if current_user %>
       </ul>
     </div><!-- /.navbar-collapse -->
     
@@ -46,8 +45,6 @@
 
 <div class="container">
   <% flash.each do |key, value| %>
-    
-   <!-- <%= content_tag :div, value, class: "alert alert-#{key}", role: "alert" %> -->
     <div class="alert alert-<%= key %> alert-dismissible" role="alert">
   <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
   <%= value %>

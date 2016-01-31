@@ -1,23 +1,42 @@
-
-
-
 <div class="jumbotron text-center">
     <h1>Welcome to <strong>Tenantr</strong></h1>
     <h3>Where landlords can manage their tenants, and tenants can manage their landlords.</h3>
 </div>
 <div class="row">
-    <div class="col-md-6">
-        <div class="well">
-            <h2 class="text-center">Basic Membership</h2>
-            <h4 class="text-center">Rgister for free and get basic access to the <strong>Tenantr</strong> application.</h4> <br />
-            <%= link_to "Register FREE Account", new_user_registration_path(plan: @basic_plan.id), class: 'btn btn-primary btn-lg btn-block' %>
-        </div>  
-    </div>
-    <div class="col-md-6">
-        <div class="well">
-            <h2 class="text-center">Pro Membership</h2>
-            <h4 class="text-center">Register for the Pro Account for $10/month to gain full access to the <strong>Tenantr</strong> application.</h4>
-            <%= link_to "Register PRO Account", new_user_registration_path(plan: @pro_plan.id), class: 'btn btn-success btn-lg btn-block' %>
-        </div>  
-    </div>
+    <% if user_signed_in? %>
+         <div class="col-md-6">
+            <div class="well">
+                <h2 class="text-center">Your Profile</h2>
+                <% if current_user.profile %>
+                    <%= link_to "Edit Profile", "#", class: 'btn btn-default btn-lg btn-block' %>
+                    <%= link_to "View your profile", user_path(current_user), class: 'btn btn-default btn-lg btn-block' %>
+                <% else %>
+                    <p class="text-center">Create your profile to make it easy for other community members to find you!</p>
+                    <%= link_to "Create Your Profile!", new_user_profile_path(current_user), class: 'btn btn-default btn-lg btn-block' %>
+                <% end %>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="well">
+                <h2 class="text-center">The Community</h2>
+                <p class="text-center">Visit the community to meet other developers, entrepreneurs, and investors! This is your gateway to the <strong>Tenantr</strong> community.</p>
+                <%= link_to "Visit the community!", "#", class: 'btn btn-default btn-lg btn-block' %>
+            </div>
+        </div>
+    <% else %>
+        <div class="col-md-6">
+            <div class="well">
+                <h2 class="text-center">Basic Membership</h2>
+                <h4 class="text-center">Rgister for free and get basic access to the <strong>Tenantr</strong> application.</h4> <br />
+                <%= link_to "Register FREE Account", new_user_registration_path(plan: @basic_plan.id), class: 'btn btn-primary btn-lg btn-block' %>
+            </div>  
+        </div>
+        <div class="col-md-6">
+            <div class="well">
+                <h2 class="text-center">Pro Membership</h2>
+                <h4 class="text-center">Register for the Pro Account for $10/month to gain full access to the <strong>Tenantr</strong> application.</h4>
+                <%= link_to "Register PRO Account", new_user_registration_path(plan: @pro_plan.id), class: 'btn btn-success btn-lg btn-block' %>
+            </div>  
+        </div>
+    <% end %>
 </div>

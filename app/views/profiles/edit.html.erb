@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <div class="well">
+            <h1 class="text-center">Create Your <strong>Tenantr</strong> Profile!</h1>
+            <p class="text-center">Tell us a bit about who you are and be apart of your community.</p>
+            <%= form_for @profile, url: edit_user_profile_path do |f| %>
+                <div class="form-group">
+                    <%= f.label :first_name %>
+                    <%= f.text_field :first_name, class: 'form-control', value: @user.profile.first_name %>
+                </div>   
+                <div class="form-group">
+                    <%= f.label :last_name %>
+                    <%= f.text_field :last_name, class: 'form-control', value: @user.profile.last_name %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :job_title %>
+                    <%= f.select :job_title, ['Developer', 'Entrepreneur', 'Investor'], {}, class: 'form-control', value: @user.profile.job_title %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :phone_number %>
+                    <%= f.text_field :phone_number, class: 'form-control', value: @user.profile.phone_number %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :contact_email %>
+                    <%= f.text_field :contact_email, class: 'form-control', value: @user.profile.contact_email %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :description %>
+                    <%= f.text_area :description, class: 'form-control', value: @user.profile.description %>
+                </div>
+                <div class="form-group">
+                    <%= f.submit "Update Profile!", class: 'btn btn-success' %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>
