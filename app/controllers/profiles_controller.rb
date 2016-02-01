@@ -1,6 +1,5 @@
 class ProfilesController < ApplicationController
     def new
-        # Form show up on the page that allows the user to fill out info for their profile.
         @user = User.find( params[:user_id] )
         @profile = Profile.new
     end
@@ -20,20 +19,11 @@ class ProfilesController < ApplicationController
     
     def edit
         @user = User.find( params[:user_id] )
-        @profile = @user.build_profile()
+        @profile = @user.profile
     end
     
     def update
-        @user = User.find( params[:user_id] )
-        @profile = @user.build_profile(profile_params)
-        
-        if @profile.save
-            flash[:success] = "Profile updated!"
-           redirect_to user_path( params[:user_id] ) 
-        else
-            flash[:danger] = "Error saving profile."
-            render action: :new
-        end
+
     end
     
     private
