@@ -8,3 +8,30 @@
     color: white;
     text-align: center;
 }
+
+.well.profile-block {
+    color: #fff;
+    h3 {
+        margin-top: 0px;
+    }
+}
+
+.profile-avatar {
+    -webkit-box-shadow: 1px 10px 28px -3px rgba(0,0,0,0.75);
+-moz-box-shadow: 1px 10px 28px -3px rgba(0,0,0,0.75);
+box-shadow: 1px 10px 28px -3px rgba(0,0,0,0.75);
+}
+
+.well.profile-description {
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+.well.contact-info {
+    background-color: #5bc0de;
+    border-color: #46b8da;
+}
+
+.inline-block {
+    display:inline-block;
+}
