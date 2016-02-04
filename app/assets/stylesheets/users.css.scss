@@ -18,8 +18,10 @@
 
 .profile-avatar {
     -webkit-box-shadow: 1px 10px 28px -3px rgba(0,0,0,0.75);
--moz-box-shadow: 1px 10px 28px -3px rgba(0,0,0,0.75);
-box-shadow: 1px 10px 28px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 10px 28px -3px rgba(0,0,0,0.75);
+    box-shadow: 1px 10px 28px -3px rgba(0,0,0,0.75);
+    border-radius: 100px;
+    border: 2px solid #fff;
 }
 
 .well.profile-description {
