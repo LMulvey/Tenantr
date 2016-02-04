@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <h1 class="text-center"><strong>Tenantr</strong> Community</h1>
+        <p class="text-center">Check us out.</p>
+        <ul class="list-unstyled">
+            <% @users.each do |user| %>
+                <% if user.profile %>
+                    <%= link_to user do %>
+                        <li>
+                            <div class="well row<%= cycle(' white-bg', '') %>">
+                                <div class="col-sm-4 text-center">
+                                    <% if user.profile.avatar %>
+                                        <%= image_tag user.profile.avatar.url(:thumb), class: 'profile-avatar' %>
+                                    <% end %>
+                                </div>
+                    <% end %>
+                            <div>
+                                <%= link_to user do %><h2><%= user.profile.first_name %> <%= user.profile.last_name %></h2><% end %>
+                                <h3 class="no-margin-top"><span class="label label-warning"><%= user.profile.job_title %></span></h3>
+                            </div>
+                        </div>
+                          
+                        </li>
+                    
+                <% end %>
+            <% end %>
+        </ul>
+    </div>
+</div>
